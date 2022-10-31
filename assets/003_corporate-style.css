@@ -1,0 +1,256 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Html
+- Body
+- Dash Date Picker
+- Dash Dropdown
+- Dash Table
+- Img
+- Typography
+*/
+
+
+/* Html
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+html {
+    font-family: 'Proxima Nova' !important;
+    background: #1381e0;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    width: 100% !important;
+    min-height: 100% !important;
+    min-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+
+/* Body
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+body {
+    font-family: 'Proxima Nova' !important;
+    background-color: #1381e0;
+    margin: 0%
+    /* By default the body color is white, making any transparent component, actually white!*/
+}
+
+
+/* Dash Date Picker
+https://github.com/plotly/dash-core-components/blob/557d2fd4987c437265d220f71ee69c2d0616526c/dash_core_components/react-dates%4012.3.0.css
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.DateInput_input,
+.DateInput_input_1 {
+    color: inherit !important;
+    text-align: center;
+    font-size: inherit !important;
+    height: 25px !important;
+    width: 100% !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+}
+
+.DateInput {
+    color: inherit !important;
+    width: 95px !important;
+}
+
+.DateRangePickerInput_arrow_svg,
+.DateRangePickerInput_arrow_svg_1 {
+    height: 10px !important;
+    width: 10px !important;
+}
+
+
+/* Calendar date start and end */
+
+.CalendarDay__selected,
+.CalendarDay__selected:active,
+.CalendarDay__selected:hover {
+    background: #1f375b !important;
+    border: 1px double #1f375b !important;
+    color: #ffffff !important;
+}
+
+
+/* Calendar in between start and end date */
+
+.CalendarDay__selected_span {
+    background: #455058 !important;
+    border: 1px double #455058 !important;
+    color: #ffffff !important;
+}
+
+.CalendarDay__selected_span:active,
+.CalendarDay__selected_span:hover {
+    background: #1381e0 !important;
+    border: 1px double #1381e0 !important;
+    color: #ffffff !important;
+}
+
+
+/* Calendar default help button */
+
+.DayPickerKeyboardShortcuts_show__bottomRight::before {
+    border-top: 26px solid transparent;
+    border-right: 33px solid #455058 !important;
+    bottom: 0;
+    right: 0;
+}
+
+.DayPickerKeyboardShortcuts_show__bottomRight:hover .DayPickerKeyboardShortcuts_show__bottomRight:active {
+    border-top: 26px solid transparent;
+    border-right: 33px solid #1381e0 !important;
+    bottom: 0;
+    right: 0;
+}
+
+
+/* Dash Dropdown
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.VirtualizedSelectOption {
+    white-space: nowrap;
+}
+
+
+/* Dash Table
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+tr:hover {
+    background-color: #1f375b !important;
+}
+
+
+/* Img
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    border-style: none;
+}
+
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Proxima Nova' !important;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    vertical-align: central;
+    text-align: center;
+    font-weight: 350;
+    color: #ffffff;
+}
+
+p {
+    font-weight: 300;
+}
+
+body {
+    margin: 0;
+}
+
+
+/*selected player labels in dropdown - font colour*/
+
+#react-select-1--value-item {
+    color: white
+}
+
+#react-select-2--value-item {
+    color: white
+}
+
+#react-select-3--value-item {
+    color: white
+}
+
+#react-select-4--value-item {
+    color: white
+}
+
+#react-select-5--value-item {
+    color: white
+}
+
+#react-select-6--value-item {
+    color: white
+}
+
+#react-select-7--value-item {
+    color: white
+}
+
+#react-select-8--value-item {
+    color: white
+}
+
+#react-select-9--value-item {
+    color: white
+}
+
+#react-select-10--value-item {
+    color: white
+}
+
+#react-select-11--value-item {
+    color: white
+}
+
+#react-select-12--value-item {
+    color: white
+}
+
+#react-select-13--value-item {
+    color: white
+}
+
+#react-select-14--value-item {
+    color: white
+}
+
+#react-select-15--value-item {
+    color: white
+}
+
+#react-select-16--value-item {
+    color: white
+}
+
+#react-select-17--value-item {
+    color: white
+}
+
+#react-select-18--value-item {
+    color: white
+}
+
+
+/*dropdowm labels - font colour and background colour*/
+
+.Select-menu-outer {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+
+/* background color of dropdown - ensures not the whole div is this bg colour*
+#player_choice > div > div {background-color: rgba(0, 0, 0, 0.1)}/
