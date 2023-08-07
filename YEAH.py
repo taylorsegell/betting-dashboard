@@ -16,7 +16,7 @@ from app import app
 ####################################################################################################
 
 # Corporate css formatting
-fanduel_colors = {
+account_colors = {
     'dark-blue-grey': '#445058',
     'medium-blue-grey': '#F0F3F8',
     'superdark-blue': '#1F375B',
@@ -40,8 +40,8 @@ externalgraph_colstyling = {
     'border-radius': '10px',
     'border-style': 'solid',
     'border-width': '1px',
-    'border-color': fanduel_colors['superdark-blue'],
-    'background-color': fanduel_colors['superdark-blue'],
+    'border-color': account_colors['superdark-blue'],
+    'background-color': account_colors['superdark-blue'],
     'box-shadow': '0px 0px 17px 0px #CFD6DB',
     'padding-top': '10px'
 }
@@ -50,14 +50,14 @@ filterdiv_borderstyling = {
     'border-radius': '0px 0px 10px 10px',
     'border-style': 'solid',
     'border-width': '1px',
-    'border-color': fanduel_colors['light-blue'],
-    'background-color': fanduel_colors['superdark-blue'],
+    'border-color': account_colors['light-blue'],
+    'background-color': account_colors['superdark-blue'],
     'box-shadow': '2px 5px 5px 1px #445058'
 }
 
 navbarcurrentpage = {
     'text-decoration': 'underline',
-    'text-decoration-color': fanduel_colors['red'],
+    'text-decoration-color': account_colors['red'],
     'text-shadow': '0px 0px 1px #FFFFFF'
 }
 
@@ -78,84 +78,84 @@ recapdiv = {
 recapdiv_text = {
     'text-align': 'left',
     'font-weight': '350',
-    'color': fanduel_colors['white'],
+    'color': account_colors['white'],
     'font-size': '1.5rem',
     'letter-spacing': '0.04em'
 }
 
 # Corporate chart formatting
 
-fanduel_title = {
+account_title = {
     'font': {
         'size': 16,
-        'color': fanduel_colors['white']}
+        'color': account_colors['white']}
 }
 
-fanduel_xaxis = {
+account_xaxis = {
     'showgrid': False,
-    'linecolor': fanduel_colors['light-grey'],
-    'color': fanduel_colors['light-grey'],
+    'linecolor': account_colors['light-grey'],
+    'color': account_colors['light-grey'],
     'tickangle': 315,
     'titlefont': {
         'size': 12,
-        'color': fanduel_colors['light-grey']},
+        'color': account_colors['light-grey']},
     'tickfont': {
         'size': 11,
-        'color': fanduel_colors['light-grey']},
+        'color': account_colors['light-grey']},
     'zeroline': False
 }
 
-fanduel_yaxis = {
+account_yaxis = {
     'showgrid': True,
-    'color': fanduel_colors['light-grey'],
+    'color': account_colors['light-grey'],
     'gridwidth': 0.5,
-    'gridcolor': fanduel_colors['dark-blue'],
-    'linecolor': fanduel_colors['light-grey'],
+    'gridcolor': account_colors['dark-blue'],
+    'linecolor': account_colors['light-grey'],
     'titlefont': {
         'size': 12,
-        'color': fanduel_colors['light-grey']},
+        'color': account_colors['light-grey']},
     'tickfont': {
         'size': 11,
-        'color': fanduel_colors['light-grey']},
+        'color': account_colors['light-grey']},
     'zeroline': False
 }
 
-fanduel_font_family = 'Proxima Nova'
+account_font_family = 'Proxima Nova'
 
-fanduel_legend = {
+account_legend = {
     'orientation': 'h',
     'yanchor': 'bottom',
     'y': 1.01,
     'xanchor': 'right',
     'x': 1.05,
-    'font': {'size': 9, 'color': fanduel_colors['light-grey']}
+    'font': {'size': 9, 'color': account_colors['light-grey']}
 }  # Legend will be on the top right, above the graph, horizontally
 
 # Set top margin to in case there is a legend
-fanduel_margins = {'l': 5, 'r': 5, 't': 45, 'b': 15}
+account_margins = {'l': 5, 'r': 5, 't': 45, 'b': 15}
 
-fanduel_layout = go.Layout(
-    font={'family': fanduel_font_family},
-    title=fanduel_title,
+account_layout = go.Layout(
+    font={'family': account_font_family},
+    title=account_title,
     title_x=0.5,  # Align chart title to center
     paper_bgcolor='rgba(0,0,0,0)',
     plot_bgcolor='rgba(0,0,0,0)',
-    xaxis=fanduel_xaxis,
-    yaxis=fanduel_yaxis,
+    xaxis=account_xaxis,
+    yaxis=account_yaxis,
     height=270,
-    legend=fanduel_legend,
-    margin=fanduel_margins
+    legend=account_legend,
+    margin=account_margins
 )
-fanduel_layout2 = go.Layout(
-    font={'family': fanduel_font_family},
-    title=fanduel_title,
+account_layout2 = go.Layout(
+    font={'family': account_font_family},
+    title=account_title,
     title_x=0.5,  # Align chart title to center
     paper_bgcolor='rgba(0,0,0,0)',
     plot_bgcolor='rgba(0,0,0,0)',
-    xaxis=fanduel_xaxis,
-    yaxis=fanduel_yaxis,
-    legend=fanduel_legend,
-    margin=fanduel_margins
+    xaxis=account_xaxis,
+    yaxis=account_yaxis,
+    legend=account_legend,
+    margin=account_margins
 )
 ####################################################################################################
 # 000 - DATA MAPPING
@@ -290,7 +290,7 @@ def colorscale_generator(n, starting_col={'r': 20, 'g': 147, 'b': 255}, finish_c
 # Create a corporate colorcale
 colors = colorscale_generator(n=11)
 
-fanduel_colorscale = [
+account_colorscale = [
     [0.0, colors[0]],
     [0.1, colors[1]],
     [0.2, colors[2]],
@@ -448,15 +448,15 @@ def update_chart(start_date, end_date, reporting_l1_dropdown, reporting_l2_dropd
         {  # 'if': {
             #  'filter_query': '{Result} >= {Target} && {Target} > 0',
             # 'column_id': 'Target_Percent'},
-            'backgroundColor': fanduel_colors['light-blue'],
-            'color': fanduel_colors['dark-blue'],
+            'backgroundColor': account_colors['light-blue'],
+            'color': account_colors['dark-blue'],
             'fontWeight': 'bold'
         },
         ''' {  # 'if': {
             #  'filter_query': '{Result} < {Target} && {Target} > 0',
             # 'column_id': 'Target_Percent'},
-            'backgroundColor': fanduel_colors['red'],
-            'color': fanduel_colors['dark-blue'],
+            'backgroundColor': account_colors['red'],
+            'color': account_colors['dark-blue'],
             'fontWeight': 'bold'
         },'''
     ]
@@ -531,14 +531,14 @@ def update_chart(start_date, end_date, reporting_l1_dropdown, reporting_l2_dropd
     data = go.Scatter(
         x=df['Placed Date'],
         y=df['Gross Revenue Sum'],
-        line={'color': fanduel_colors['red'], 'width': 0.5},
+        line={'color': account_colors['red'], 'width': 0.5},
         hovertemplate=hovertemplate_xy)
-    fig = go.Figure(data=data, layout=fanduel_layout)
+    fig = go.Figure(data=data, layout=account_layout)
     ''' fig.add_trace(
                 go.Bar(
                     x=df['Placed Date'],
                     y=df['Gross Revenue Sum'],
-                    marker={'color': fanduel_colors['light-blue'],
+                    marker={'color': account_colors['light-blue'],
                     'opacity': 0.75}))'''
     # hovertemplate=hovertemplate_xy
 
@@ -624,10 +624,10 @@ def update_chart(start_date, end_date, reporting_l1_dropdown, reporting_l2_dropd
         x=df['month'],
         y=df['Gross Revenue Sum'],
         marker={'color': df['Gross Revenue Sum'],
-                'colorscale': [fanduel_colors['dark-blue'], fanduel_colors['dark-blue'],
-                               fanduel_colors['light-blue'], fanduel_colors['red'], fanduel_colors['red']], 'opacity': 0.75},
+                'colorscale': [account_colors['dark-blue'], account_colors['dark-blue'],
+                               account_colors['light-blue'], account_colors['red'], account_colors['red']], 'opacity': 0.75},
         hovertemplate=hovertemplate_xy)
-    fig = go.Figure(data=data, layout=fanduel_layout)
+    fig = go.Figure(data=data, layout=account_layout)
 
     # Add target% as line on secondary axis
     ''' hovertemplate_xy2 = (
@@ -644,7 +644,7 @@ def update_chart(start_date, end_date, reporting_l1_dropdown, reporting_l2_dropd
             'ticktext': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']},
         yaxis={'title': "Revenue (units)"},
         showlegend=False)
-    fig.update_layout(yaxis2=fanduel_yaxis)
+    fig.update_layout(yaxis2=account_yaxis)
     fig.update_layout(
         yaxis2={
             'title': "% over Revenue Frequency",
@@ -733,12 +733,12 @@ def update_chart(start_date, end_date, reporting_l1_dropdown, reporting_l2_dropd
         z=df['Gross Revenue Sum'].round(2),
         hovertemplate=hovertemplate_here,
         hoverongaps=False,
-        colorscale=[fanduel_colors['dark-blue'], fanduel_colors['dark-blue'],
-                    fanduel_colors['light-blue'], fanduel_colors['red'], fanduel_colors['red']],
+        colorscale=[account_colors['dark-blue'], account_colors['dark-blue'],
+                    account_colors['light-blue'], account_colors['red'], account_colors['red']],
         showscale=False,
         xgap=1,
         ygap=1)
-    fig = go.Figure(data=data, layout=fanduel_layout)
+    fig = go.Figure(data=data, layout=account_layout)
     fig.update_layout(
         title={'text': "Heatmap: Revenue by Week and Weekeday"},
         xaxis={
@@ -839,10 +839,10 @@ def update_chart(start_date, end_date, reporting_l1_dropdown, reporting_l2_dropd
         x=df['State'],
         y=df['sale_p'],
         base=sale_base,
-        marker={'color': [fanduel_colors['dark-blue'], fanduel_colors['light-blue'], fanduel_colors['red']],
+        marker={'color': [account_colors['dark-blue'], account_colors['light-blue'], account_colors['red']],
                 'opacity': 0.75},
         hovertemplate=df['hovertext'])
-    fig = go.Figure(data=data, layout=fanduel_layout)
+    fig = go.Figure(data=data, layout=account_layout)
     fig.update_layout(
         title={'text': "Revenue Percentage by State"},
         xaxis={'title': "State", 'tickangle': 0},
@@ -940,11 +940,11 @@ def update_chart(start_date, end_date, reporting_l1_dropdown, reporting_l2_dropd
     colorscale = colorscale_generator(n=countries, starting_col={
                                       'r': 57, 'g': 81, 'b': 85}, finish_col={'r': 251, 'g': 251, 'b': 252})
 
-    fig = go.Figure(layout=fanduel_layout)
+    fig = go.Figure(layout=account_layout)
     i = 0
     for co in state_names:
-        color = [fanduel_colors['dark-blue'], fanduel_colors['dark-blue'], fanduel_colors['light-blue'],
-                 fanduel_colors['red'], fanduel_colors['red']]
+        color = [account_colors['dark-blue'], account_colors['dark-blue'], account_colors['light-blue'],
+                 account_colors['red'], account_colors['red']]
         i = i+1
         df_i = df.loc[df['State'] == co, :].copy()
         fig.add_trace(
@@ -957,19 +957,19 @@ def update_chart(start_date, end_date, reporting_l1_dropdown, reporting_l2_dropd
                 marker={
                     'color': color[i],
                     'line_width': 1,
-                    'line': {'color': fanduel_colors['light-grey']}
+                    'line': {'color': account_colors['light-grey']}
                 })
         )
 
     fig.update_traces(mode='markers', marker={
                       'sizemode': 'area', 'sizeref': sizeref})
-    fanduel_margins_here = fanduel_margins
-    fanduel_margins_here['t'] = 65
+    account_margins_here = account_margins
+    account_margins_here['t'] = 65
     fig.update_layout(
         title={'text': "Revenue Total by State"},
         xaxis={'title': "State", 'tickangle': 0},
         yaxis={'title': "Revenue (GGR)"},
-        margin=fanduel_margins_here)
+        margin=account_margins_here)
     fig.update_xaxes(showticklabels=False)
 
     return fig
@@ -1073,7 +1073,7 @@ def update_chart(start_date, end_date, reporting_l1_dropdown, reporting_l2_dropd
         )
         i = i+1
         data.append(trace)
-    fig = go.Figure(data=data, layout=fanduel_layout)
+    fig = go.Figure(data=data, layout=account_layout)
     fig.update_layout(
         barmode='relative',
         title={'text': "Revenue by State & Sport"},
@@ -1129,7 +1129,7 @@ def generate_chart(p, s):
         fig.update_layout(barmode='group', title='<b>All Sports</b>')
         fig.update_yaxes(
             title_text="<b>Total Revenue</b>")
-        fig.update_layout(fanduel_layout2)
+        fig.update_layout(account_layout2)
     else:
         masks = tmp3[tmp3['sport'] == s]
         maskp = tmp2[tmp2['sport'] == s]
@@ -1151,7 +1151,7 @@ def generate_chart(p, s):
         fig.update_xaxes(categoryorder='array', categoryarray=mnths)
         fig.update_yaxes(title_text="<b>Total Revenue</b>")
 
-        fig.update_layout(fanduel_layout2)
+        fig.update_layout(account_layout2)
     return fig
 
 
@@ -1179,7 +1179,7 @@ def make_heatmap(tri_df, title):
                                       x=df_mask.columns.tolist(),
                                       y=df_mask.columns.tolist(),
                                       colorscale=[
-                                          fanduel_colors['dark-blue'], fanduel_colors['light-blue'], fanduel_colors['red']],
+                                          account_colors['dark-blue'], account_colors['light-blue'], account_colors['red']],
                                       showscale=True, ygap=1, xgap=1
                                       )
 
@@ -1224,14 +1224,14 @@ def update_tri(m):
         fig = make_heatmap(cohort_counts, 'Cohorts Size')
         fig.update_traces(
             hovertemplate='Total Players: %{z:0}<br>Cohort Month: %{y} <br>Months Since: %{x}')
-        fig.update_layout(fanduel_layout2)
+        fig.update_layout(account_layout2)
         fig.update_layout(font=dict(color='white'))
     else:
         # m == 'cohort_retention':
         fig = make_heatmap(retention, 'Retention')
         fig.update_traces(
             hovertemplate='Average Retention: %{z:.2%}<br>Cohort Month: %{y} <br>Months Since: %{y}')
-        fig.update_layout(fanduel_layout2)
+        fig.update_layout(account_layout2)
         fig.update_layout(font=dict(color='white'))
 
     return fig
@@ -1258,8 +1258,8 @@ rfd.columns = rfd.columns.str.replace('_', ' ').str.title()
 
 def update_treemap(col):
     fig = px.treemap(rfd, path=[px.Constant("Sportsbook"), 'Rf Segment', col], values='Count', color='Money Spent Mean',
-                     color_continuous_scale=[fanduel_colors['dark-blue'], fanduel_colors['dark-blue'],
-                                             fanduel_colors['light-blue'], fanduel_colors['red'], fanduel_colors['red']],
+                     color_continuous_scale=[account_colors['dark-blue'], account_colors['dark-blue'],
+                                             account_colors['light-blue'], account_colors['red'], account_colors['red']],
                      color_continuous_midpoint=np.average(rfd['Money Spent Mean'], weights=rfd['Count']))
     return fig
 
@@ -1273,7 +1273,7 @@ def update_tree(n):
         fig = update_treemap(x)
         fig.update_traces(
             hovertemplate='Average Retention: %{label}<br>Cohort Month: %{value} <br>Months Since: %{parent}', marker_line_color='black')
-        fig.update_layout(fanduel_layout2)
+        fig.update_layout(account_layout2)
         fig.update_layout(font=dict(color='white'),
                           height=700)
     elif n == 'states':
@@ -1281,7 +1281,7 @@ def update_tree(n):
         fig = update_treemap(x)
         fig.update_traces(
             hovertemplate='Average Retention: %{label}<br>Cohort Month: %{value} <br>Months Since: %{parent}', marker_line_color='black')
-        fig.update_layout(fanduel_layout2)
+        fig.update_layout(account_layout2)
         fig.update_layout(font=dict(color='white'),
                           height=700)
     return fig

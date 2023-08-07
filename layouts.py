@@ -14,7 +14,7 @@ from app import app
 ####################################################################################################
 
 # Corporate css formatting
-fanduel_colors = {
+account_colors = {
     'dark-blue-grey': '#445058',
     'medium-blue-grey': '#F0F3F8',
     'superdark-blue': '#1F375B',
@@ -37,8 +37,8 @@ externalgraph_colstyling = {
     'border-radius': '10px',
     'border-style': 'solid',
     'border-width': '1px',
-    'border-color': fanduel_colors['superdark-blue'],
-    'background-color': fanduel_colors['superdark-blue'],
+    'border-color': account_colors['superdark-blue'],
+    'background-color': account_colors['superdark-blue'],
     'box-shadow': '0px 0px 17px 0px #CFD6DB',
     'padding-top': '10px'
 }
@@ -47,8 +47,8 @@ filterdiv_borderstyling = {
     'border-radius': '0px 0px 10px 10px',
     'border-style': 'solid',
     'border-width': '1px',
-    'border-color': fanduel_colors['light-blue'],
-    'background-color': fanduel_colors['superdark-blue'],
+    'border-color': account_colors['light-blue'],
+    'background-color': account_colors['superdark-blue'],
     'box-shadow': '2px 5px 5px 1px #445058'
 }
 
@@ -94,85 +94,85 @@ recapdiv = {
 recapdiv_text = {
     'text-align': 'left',
     'font-weight': '350',
-    'color': fanduel_colors['white'],
+    'color': account_colors['white'],
     'font-size': '1.5rem',
     'letter-spacing': '0.04em'
 }
 
 # Corporate chart formatting
 
-fanduel_title = {
+account_title = {
     'font': {
         'size': 16,
-        'color': fanduel_colors['white']}
+        'color': account_colors['white']}
 }
 
-fanduel_xaxis = {
+account_xaxis = {
     'showgrid': False,
-    'linecolor': fanduel_colors['light-grey'],
-    'color': fanduel_colors['light-grey'],
+    'linecolor': account_colors['light-grey'],
+    'color': account_colors['light-grey'],
     'tickangle': 315,
     'titlefont': {
         'size': 12,
-        'color': fanduel_colors['light-grey']},
+        'color': account_colors['light-grey']},
     'tickfont': {
         'size': 11,
-        'color': fanduel_colors['light-grey']},
+        'color': account_colors['light-grey']},
     'zeroline': False
 }
 
-fanduel_yaxis = {
+account_yaxis = {
     'showgrid': True,
-    'color': fanduel_colors['light-grey'],
+    'color': account_colors['light-grey'],
     'gridwidth': 0.5,
-    'gridcolor': fanduel_colors['dark-blue'],
-    'linecolor': fanduel_colors['light-grey'],
+    'gridcolor': account_colors['dark-blue'],
+    'linecolor': account_colors['light-grey'],
     'titlefont': {
         'size': 12,
-        'color': fanduel_colors['light-grey']},
+        'color': account_colors['light-grey']},
     'tickfont': {
         'size': 11,
-        'color': fanduel_colors['light-grey']},
+        'color': account_colors['light-grey']},
     'zeroline': False
 }
 
-fanduel_font_family = 'Proxima Nova'
+account_font_family = 'Proxima Nova'
 
-fanduel_legend = {
+account_legend = {
     'orientation': 'h',
     'yanchor': 'bottom',
     'y': 1.01,
     'xanchor': 'right',
     'x': 1.05,
-    'font': {'size': 9, 'color': fanduel_colors['light-grey']}
+    'font': {'size': 9, 'color': account_colors['light-grey']}
 }  # Legend will be on the top right, above the graph, horizontally
 
 
 # Set top margin to in case there is a legend
-fanduel_margins = {'l': 5, 'r': 5, 't': 45, 'b': 15}
+account_margins = {'l': 5, 'r': 5, 't': 45, 'b': 15}
 
-fanduel_layout = go.Layout(
-    font={'family': fanduel_font_family},
-    title=fanduel_title,
+account_layout = go.Layout(
+    font={'family': account_font_family},
+    title=account_title,
     title_x=0.5,  # Align chart title to center
     paper_bgcolor='rgba(0,0,0,0)',
     plot_bgcolor='rgba(0,0,0,0)',
-    xaxis=fanduel_xaxis,
-    yaxis=fanduel_yaxis,
+    xaxis=account_xaxis,
+    yaxis=account_yaxis,
     height=270,
-    legend=fanduel_legend,
-    margin=fanduel_margins
+    legend=account_legend,
+    margin=account_margins
 )
-fanduel_layout2 = go.Layout(
-    font={'family': fanduel_font_family, 'color': '#ffffff'},
-    title=fanduel_title,
+account_layout2 = go.Layout(
+    font={'family': account_font_family, 'color': '#ffffff'},
+    title=account_title,
     title_x=0.5,  # Align chart title to center
     paper_bgcolor='rgba(0,0,0,0)',
     plot_bgcolor='rgba(0,0,0,0)',
-    xaxis=fanduel_xaxis,
-    yaxis=fanduel_yaxis,
-    legend=fanduel_legend,
-    margin=fanduel_margins
+    xaxis=account_xaxis,
+    yaxis=account_yaxis,
+    legend=account_legend,
+    margin=account_margins
 )
 
 
@@ -181,7 +181,7 @@ dropdown_format = {'font-size': '13px',"background-color":"#1f375b",
 =======
 dropdown_format = {'font-size': '13px',
 >>>>>>> 19b613e (First Commit)
-                   'color': fanduel_colors['medium-blue-grey'], 'white-space': 'nowrap', 'text-overflow': 'ellipsis'}
+                   'color': account_colors['medium-blue-grey'], 'white-space': 'nowrap', 'text-overflow': 'ellipsis'}
 ####################################################################################################
 # 000 - DATA MAPPING
 ####################################################################################################
@@ -301,7 +301,7 @@ def get_header():
     ],
         className='row',
         style={'height': '4%',
-               'background-color': fanduel_colors['superdark-blue']}
+               'background-color': account_colors['superdark-blue']}
     )
     html.Div([  # Internal row - RECAPS
 
@@ -312,17 +312,17 @@ def get_header():
                         id='recap-table',
                         style_header={
                             'backgroundColor': 'transparent',
-                            'fontFamily': fanduel_font_family,
+                            'fontFamily': account_font_family,
                             'font-size': '1.25rem',
-                            'color': fanduel_colors['white'],
+                            'color': account_colors['white'],
                             'border': '0px transparent',
                             'textAlign': 'center',
                             'minWidth': '180px', 'width': '180px', 'maxWidth': '180px'},
                         style_cell={
                             'backgroundColor': 'transparent',
-                            'fontFamily': fanduel_font_family,
+                            'fontFamily': account_font_family,
                             'font-size': '1rem',
-                            'color': fanduel_colors['white'],
+                            'color': account_colors['white'],
                             'border': '0px transparent',
                             'textAlign': 'center',
                             'minWidth': '180px', 'width': '180px', 'maxWidth': '180px'},
@@ -380,7 +380,7 @@ def get_navbar(p='revenue'):
 
     ],
         className='row',
-        style={'background-color': fanduel_colors['dark-blue'],
+        style={'background-color': account_colors['dark-blue'],
                'box-shadow': '2px 5px 5px 1px #445058'}
     )
 
@@ -417,7 +417,7 @@ def get_navbar(p='revenue'):
 
     ],
         className='row',
-        style={'background-color': fanduel_colors['dark-blue'],
+        style={'background-color': account_colors['dark-blue'],
                'box-shadow': '2px 5px 5px 1px #445058'}
     )
 
@@ -454,7 +454,7 @@ def get_navbar(p='revenue'):
 
     ],
         className='row',
-        style={'background-color': fanduel_colors['dark-blue'],
+        style={'background-color': account_colors['dark-blue'],
                'box-shadow': '2px 5px 5px 1px #445058'}
     )
 
@@ -517,7 +517,7 @@ revenue = html.Div([
                         html.H5(
                             children='Filters by Date:',
                             style={'text-align': 'left',
-                                   'color': fanduel_colors['medium-blue-grey']}
+                                   'color': account_colors['medium-blue-grey']}
                         ),
                         # Date range picker
                         html.Div(['Select a date range: ',
@@ -551,7 +551,7 @@ revenue = html.Div([
                         html.H5(
                             children='Filters by Reporting Groups:',
                             style={'text-align': 'left',
-                                   'color': fanduel_colors['medium-blue-grey']}
+                                   'color': account_colors['medium-blue-grey']}
                         ),
                         # Reporting group selection l1
                         html.Div([
@@ -616,7 +616,7 @@ revenue = html.Div([
         html.Div([  # External 10-column
 
             html.H2(children="Past Year KPIs",
-                    style={'color': fanduel_colors['white']}),
+                    style={'color': account_colors['white']}),
 
             html.Div([  # Internal row - RECAPS
 
@@ -627,17 +627,17 @@ revenue = html.Div([
                         id='recap-table',
                         style_header={
                             'backgroundColor': 'transparent',
-                            'fontFamily': fanduel_font_family,
+                            'fontFamily': account_font_family,
                             'font-size': '1.25rem',
-                            'color': fanduel_colors['white'],
+                            'color': account_colors['white'],
                             'border': '0px transparent',
                             'textAlign': 'center',
                             'minWidth': '180px', 'width': '180px', 'maxWidth': '180px'},
                         style_cell={
                             'backgroundColor': 'transparent',
-                            'fontFamily': fanduel_font_family,
+                            'fontFamily': account_font_family,
                             'font-size': '1rem',
-                            'color': fanduel_colors['white'],
+                            'color': account_colors['white'],
                             'border': '0px transparent',
                             'textAlign': 'center',
                             'minWidth': '180px', 'width': '180px', 'maxWidth': '180px'},
@@ -713,7 +713,7 @@ revenue = html.Div([
             style=externalgraph_colstyling),  # External 10-column
 
         get_emptyrow(),
-        html.Img(src='assets/logos/01-logo/FanDuel-horizontal-logo.png',
+        html.Img(src='assets/logos/01-logo/account-horizontal-logo.png',
                  style={'padding': '1rem 0rem'}),
         get_emptyrow(),
         # Blank 1 column
@@ -763,7 +763,7 @@ page2 = html.Div(children=[
         html.Div(children=[  # External 10-column
 
             html.H2(children="Gross Gaming Revenue",
-                    style={'color': fanduel_colors['white']}),
+                    style={'color': account_colors['white']}),
             html.Div([  # Internal row - RECAPS
 
                         html.Div([], className='col-1'),  # Empty Col
@@ -867,7 +867,7 @@ page3 = html.Div(children=[
             html.Div([
                 html.Div([
                     html.H2(children="Recency, Frequency, Monetary Value",
-                            style={'textAlign': 'center', 'color': fanduel_colors['white']}),
+                            style={'textAlign': 'center', 'color': account_colors['white']}),
                     html.Div([], className='col-1')  # Empty Col
                 ],
                     className='row',
