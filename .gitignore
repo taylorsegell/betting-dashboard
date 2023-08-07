@@ -1,9 +1,11 @@
 venv
 *.pyc
 .DS_Store
+
 .env
 <<<<<<< HEAD
 finalpickle.pkl
 sports-period.pkl
 =======
 >>>>>>> 19b613e (First Commit)
+.gitignore
